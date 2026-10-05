@@ -33,8 +33,8 @@ export const flavours: Flavour[] = [
     seoDescription:
       "Lime Static mixes sharp lime, yuzu and sea salt for a clean, electric finish.",
     ingredients: [...sharedIngredients],
-    price: "$3.20",
-    image: "/images/can-lime.png",
+    price: "320 ₽",
+    image: assetPath("/images/can-lime.png"),
   },
   {
     slug: "peach-signal",
@@ -47,8 +47,8 @@ export const flavours: Flavour[] = [
     seoDescription:
       "Peach Signal blends white peach, jasmine and green tea for a soft, focused lift.",
     ingredients: [...sharedIngredients],
-    price: "$3.20",
-    image: "/images/can-peach.png",
+    price: "320 ₽",
+    image: assetPath("/images/can-peach.png"),
   },
   {
     slug: "berry-mode",
@@ -61,11 +61,12 @@ export const flavours: Flavour[] = [
     seoDescription:
       "Berry Mode combines blackberry, blackcurrant and basil for a dark, fresh edge.",
     ingredients: [...sharedIngredients],
-    price: "$3.20",
-    image: "/images/can-berry.png",
+    price: "320 ₽",
+    image: assetPath("/images/can-berry.png"),
   },
 ];
 
 export function getFlavourBySlug(slug: string) {
   return flavours.find((flavour) => flavour.slug === slug);
 }
+import { assetPath } from "@/lib/assets";

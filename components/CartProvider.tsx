@@ -59,12 +59,7 @@ function CartDrawer({
   const reduceMotion = useReducedMotion();
   const [checkoutNotice, setCheckoutNotice] = useState(false);
   const count = items.reduce((sum, item) => sum + item.quantity, 0);
-  const dollarTotal = items
-    .filter((item) => item.currency === "USD")
-    .reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const rubleTotal = items
-    .filter((item) => item.currency === "RUB")
-    .reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -192,18 +187,10 @@ function CartDrawer({
             {items.length > 0 && (
               <div className="border-t border-ink/15 px-5 py-6 sm:px-7">
                 <div className="space-y-2 text-sm">
-                  {dollarTotal > 0 && (
-                    <div className="flex justify-between gap-4">
-                      <span className="text-ink/55">Напитки</span>
-                      <strong>{formatPrice(dollarTotal, "USD")}</strong>
-                    </div>
-                  )}
-                  {rubleTotal > 0 && (
-                    <div className="flex justify-between gap-4">
-                      <span className="text-ink/55">Подписка</span>
-                      <strong>{formatPrice(rubleTotal, "RUB")}</strong>
-                    </div>
-                  )}
+                  <div className="flex justify-between gap-4 text-base">
+                    <span className="font-bold text-ink/55">Итого</span>
+                    <strong>{formatPrice(total, "RUB")}</strong>
+                  </div>
                 </div>
                 <button
                   type="button"
@@ -235,7 +222,16 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const timer = window.setTimeout(() => {
       try {
         const stored = window.localStorage.getItem(STORAGE_KEY);
-        if (stored) setItems(JSON.parse(stored) as CartItem[]);
+        if (stored) {
+          const savedItems = JSON.parse(stored) as CartItem[];
+          setItems(
+            savedItems.map((item) =>
+              item.currency === "USD"
+                ? { ...item, price: Math.round(item.price * 100), currency: "RUB" }
+                : item,
+            ),
+          );
+        }
       } catch {
         window.localStorage.removeItem(STORAGE_KEY);
       } finally {

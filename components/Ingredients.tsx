@@ -3,6 +3,7 @@
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import Image from "next/image";
 import { useSyncExternalStore } from "react";
+import { assetPath } from "@/lib/assets";
 
 const subscribeToHydration = () => () => {};
 
@@ -32,7 +33,7 @@ const tagVariants: Variants = {
 function ProtectedCan({ sizes }: { sizes: string }) {
   return (
     <Image
-      src="/images/can-lime.png"
+      src={assetPath("/images/can-lime.png")}
       alt="PULSE Lime Static sparkling energy drink can with functional ingredients"
       fill
       quality={90}

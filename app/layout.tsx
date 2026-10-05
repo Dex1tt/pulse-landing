@@ -26,7 +26,7 @@ const manrope = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrl).origin,
   title: "PULSE — Clean energy for curious minds",
   description:
     "Sparkling functional energy drink with clean caffeine, L-theanine and zero sugar. Three flavours. No sugar crash. Built for focus.",
@@ -37,18 +37,18 @@ export const metadata: Metadata = {
     "L-theanine",
     "sparkling water caffeine",
   ],
-  alternates: { canonical: "/" },
+  alternates: { canonical: siteUrl },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "/",
+    url: siteUrl,
     siteName: "PULSE",
     title: "PULSE — Clean energy for curious minds",
     description:
       "Sparkling functional energy drink with clean caffeine, L-theanine and zero sugar. Three flavours. No sugar crash. Built for focus.",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: `${siteUrl}/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: "PULSE clean energy drink cans",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "PULSE — Clean energy for curious minds",
     description:
       "Sparkling functional energy drink with clean caffeine, L-theanine and zero sugar. Three flavours. No sugar crash. Built for focus.",
-    images: ["/opengraph-image.png"],
+    images: [`${siteUrl}/opengraph-image.png`],
   },
 };
 

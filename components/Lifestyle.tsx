@@ -3,39 +3,40 @@
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import Image from "next/image";
 import { useSyncExternalStore } from "react";
+import { assetPath } from "@/lib/assets";
 
 const subscribeToHydration = () => () => {};
 
 const moments = [
   {
-    src: "/images/life-desk.jpg",
+    src: assetPath("/images/life-desk.jpg"),
     alt: "PULSE Lime Static energy drink beside a laptop and notebook on a modern desk",
     layout: "col-span-2 row-span-2 min-h-[22rem] sm:min-h-[28rem] md:min-h-0",
     sizes: "(min-width: 768px) 50vw, 100vw",
     caption: { time: "09:12", text: "первый черновик" },
   },
   {
-    src: "/images/life-bike.jpg",
+    src: assetPath("/images/life-bike.jpg"),
     alt: "Cyclist commuting through a city at golden hour",
     layout: "col-span-1 aspect-square md:aspect-auto",
     sizes: "(min-width: 768px) 25vw, 50vw",
   },
   {
-    src: "/images/life-street.jpg",
+    src: assetPath("/images/life-street.jpg"),
     alt: "Modern city street at dusk with warm lights",
     layout: "col-span-1 aspect-square md:aspect-auto",
     sizes: "(min-width: 768px) 25vw, 50vw",
     caption: { time: "19:30", text: "ещё одна идея" },
   },
   {
-    src: "/images/life-can.jpg",
+    src: assetPath("/images/life-can.jpg"),
     alt: "Hand holding a chilled PULSE Peach Signal energy drink can",
     layout: "col-span-1 aspect-square md:aspect-auto",
     sizes: "(min-width: 768px) 25vw, 50vw",
     caption: { time: "14:48", text: "без спада" },
   },
   {
-    src: "/images/life-sketch.jpg",
+    src: assetPath("/images/life-sketch.jpg"),
     alt: "PULSE Berry Mode energy drink beside sketches in a creative workspace",
     layout: "col-span-1 aspect-square md:aspect-auto",
     sizes: "(min-width: 768px) 25vw, 50vw",

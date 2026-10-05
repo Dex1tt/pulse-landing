@@ -121,8 +121,8 @@ export function FlavourDetail({ flavour, recommendations }: FlavourDetailProps) 
                     id: flavour.slug,
                     name: flavour.name,
                     image: flavour.image,
-                    price: 3.2,
-                    currency: "USD",
+                    price: 320,
+                    currency: "RUB",
                     note: "Одна банка · 250 мл",
                   })
                 }

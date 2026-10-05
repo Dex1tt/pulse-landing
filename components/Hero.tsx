@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import { useRef, useSyncExternalStore } from "react";
+import { assetPath } from "@/lib/assets";
 
 const subscribeToHydration = () => () => {};
 
@@ -138,7 +139,7 @@ export function Hero() {
           <div className="absolute bottom-[2%] left-1/2 h-12 w-[88%] -translate-x-1/2 rounded-full bg-ink/10 blur-2xl" />
 
           <ProductCan
-            src="/images/can-lime.png"
+            src={assetPath("/images/can-lime.png")}
             alt="PULSE Lime Static sparkling energy drink can"
             className="left-0 top-[19%] z-10 w-[10rem] -rotate-[8deg] sm:w-[14rem] lg:top-[15%] lg:w-[18rem]"
             delay={0.12}
@@ -149,7 +150,7 @@ export function Hero() {
             mounted={mounted}
           />
           <ProductCan
-            src="/images/can-peach.png"
+            src={assetPath("/images/can-peach.png")}
             alt="PULSE Peach Signal sparkling energy drink can"
             className="inset-x-0 top-0 z-20 mx-auto w-[13rem] rotate-[2deg] sm:w-[17rem] lg:-top-[4%] lg:w-[22rem]"
             delay={0.26}
@@ -160,7 +161,7 @@ export function Hero() {
             mounted={mounted}
           />
           <ProductCan
-            src="/images/can-berry.png"
+            src={assetPath("/images/can-berry.png")}
             alt="PULSE Berry Mode sparkling energy drink can"
             className="right-0 top-[21%] z-30 w-[10rem] rotate-[8deg] sm:w-[14rem] lg:top-[17%] lg:w-[18rem]"
             delay={0.4}

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
 
   const title = `${flavour.name} — PULSE`;
   const description = `${flavour.seoTagline} ${flavour.seoDescription}`;
-  const url = `/flavours/${flavour.slug}`;
+  const url = `${siteUrl}/flavours/${flavour.slug}`;
 
   return {
     title,
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }) {
       description,
       images: [
         {
-          url: "/opengraph-image.png",
+          url: `${siteUrl}/opengraph-image.png`,
           width: 1200,
           height: 630,
           alt: `${flavour.name} by PULSE`,
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title,
       description,
-      images: ["/opengraph-image.png"],
+      images: [`${siteUrl}/opengraph-image.png`],
     },
   };
 }
@@ -74,8 +74,8 @@ export default async function FlavourPage({ params }) {
     },
     offers: {
       "@type": "Offer",
-      price: "3.20",
-      priceCurrency: "USD",
+      price: "320",
+      priceCurrency: "RUB",
       availability: "https://schema.org/InStock",
       url: `${siteUrl}/flavours/${flavour.slug}`,
     },
