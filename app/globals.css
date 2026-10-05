@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: clip;
+  background: #f6f4ef;
+  color: #141414;
+  font-family: "Manrope", var(--font-manrope), sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+img {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+section[id],
+footer[id] {
+  scroll-margin-top: 7.5rem;
+}
+
+::selection {
+  background: #255cff;
+  color: #f6f4ef;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12;
+  }
+
+  .section-spacing {
+    @apply py-24 md:py-32;
+  }
+
+  .cta-pill {
+    @apply inline-flex items-center justify-center rounded-full bg-ink px-7 py-4 text-sm font-bold uppercase tracking-[0.08em] text-soft-white transition-colors hover:bg-electric-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric-blue;
+  }
+}
